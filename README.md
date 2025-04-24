@@ -23,7 +23,7 @@ pip install -r requirements.txt
 If you have the UV package manager installed ([download here](https://github.com/astral-sh/uv)), you can use:
 ```bash
 uv venv
-uv pip install -r requirements.txt
+uv pip install -r pyproject.toml
 ```
 
 ### Step 3: Set Up OpenAI API Key
@@ -44,7 +44,7 @@ uv run ./backend/app.py
 ```
 
 ### Step 5: Run the Frontend Application
-Open a new terminal window while keeping the backend running, then:
+Open a new terminal window within this project while keeping the backend running, then:
 
 ```bash
 cd frontend/
