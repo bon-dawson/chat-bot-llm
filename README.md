@@ -9,17 +9,12 @@ git clone https://github.com/bon-dawson/chat-bot-llm.git
 cd chat-bot-llm
 ```
 
-### Step 2: Set Up OpenAI API Key
-```bash
-export OPENAI_API_KEY=your_api_key_here
-```
-
-### Step 3: Create a Virtual Environment and Install Dependencies
+### Step 2: Create a Virtual Environment and Install Dependencies
 
 **Option 1: Using Python's built-in venv**
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+source ./venv/bin/activate  # On Windows, use: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -28,8 +23,12 @@ pip install -r requirements.txt
 If you have the UV package manager installed ([download here](https://github.com/astral-sh/uv)), you can use:
 ```bash
 uv venv
-source .venv/bin/activate  # On Windows, use: .venv\Scripts\activate
 uv pip install -r requirements.txt
+```
+
+### Step 3: Set Up OpenAI API Key
+```bash
+export OPENAI_API_KEY=your_api_key_here
 ```
 
 ### Step 4: Run the Backend Server

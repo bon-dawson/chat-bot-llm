@@ -125,11 +125,15 @@ class ChatBot:
 
     def initialize_qa_chain(self, streaming_handler=None, document_id=None):
         """Initialize or update QA chain with optional streaming and document filtering."""
+        callbacks = []
+        if streaming_handler:
+            callbacks.append(streaming_handler)
+
         llm = ChatOpenAI(
             model="gpt-4o-mini",
             temperature=0.7,
             streaming=streaming_handler is not None,
-            callbacks=[streaming_handler] if streaming_handler else None,
+            callbacks=callbacks if callbacks else None,
             verbose=True
         )
 
@@ -176,6 +180,7 @@ class ChatBot:
             retriever=retriever,
             combine_docs_chain_kwargs={"prompt": prompt},
             return_source_documents=True,
+            return_generated_question=False,  # Thêm parameter này
             verbose=True
         )
 
